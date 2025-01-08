@@ -8,31 +8,3 @@
 
 <hr>
 
-<h2>Your Uploaded Files</h2>
-
-{% if books %}
-<table border="2.5" cellpadding="20" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Cost</th>
-            <th>Year of Publication</th>
-            <th>File</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for book in books %}
-        <tr>
-            <td>{{ book.title }}</td>
-            <td>{{ book.description }}</td>
-            <td>{{ book.cost }}</td>
-            <td>{{ book.year_of_publication }}</td>
-            <td><a href="{{ book.file.url }}" target="_blank">Download</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% else %}
-<p>You haven't uploaded any files yet.</p>
-{% endif %}
